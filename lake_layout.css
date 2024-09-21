@@ -1,0 +1,124 @@
+﻿@charset "utf-8";
+
+/*
+New Perspectives on HTML5 and CSS3, 7th Edition
+Tutorial 2
+Case Problem 4
+The Great Lakescape Lodge Layout Styles
+Filename: lake_layout.css
+
+*/
+
+/* Structural Styles */
+
+body {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1020px;
+    min-width: 640px;
+    display: grid;
+    grid-template-columns: 2% 68% 28% 2%;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: 
+        "leftside header header rightside"
+        "leftside leftcol rightcol rightside"
+        "leftside footer footer rightside";
+}
+
+.leftside{
+	grid-area: leftside;
+	background-color: rgb(203, 204, 138);
+}
+
+.rightside{
+	grid-area: rightside;
+	background-color: rgb(203, 204, 138);
+}
+
+body > header {
+    grid-area: header;
+}
+
+body > header > img {
+    width: 100%;
+    display: block;
+	margin: 0;
+}
+
+body > section#leftcol {
+    grid-area: leftcol;
+    background-color: black;
+    color: aliceblue;
+}
+
+body > section#rightcol {
+    grid-area: rightcol;
+    background-color: rgb(88, 45, 90);
+}
+
+footer {
+    grid-area: footer;
+    clear: both;
+	background-color: rgb(77, 70, 78);
+	color: aliceblue;
+	text-align: center;
+}
+
+address, article, aside, blockquote, body, cite, 
+div, dl, dt, dd, em, figcaption, figure, footer, 
+h1, h2, h3, h4, h5, h6, header, html, img, 
+li, main, nav, ol, p, section, span, ul {
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; 
+}
+
+
+/* Header Navigation */
+
+header > nav {
+    display: grid;
+    width: 100%;
+}
+
+header > nav > ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    list-style-type: none;
+    padding: 0;
+}
+
+header > nav > ul > li {
+    text-align: center;
+}
+
+header > nav a {
+    display: block;
+    width: 100%;
+}
+
+
+/* Section Layout */
+
+section#leftcol aside {
+    width: 44%;
+    float: left;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    margin-bottom: 20px;
+}
+
+section#leftcol aside[title="left"] {
+	background-color: rgb(228, 161, 144);
+	padding-right: 2%;
+}
+
+section#leftcol aside[title="right"] {
+	background-color: rgb(209, 187, 114);
+}
+
+section#leftcol img {
+    width: 100%;
+    display: block;
+}
